@@ -29,21 +29,33 @@ conversion_seleccionada = st.sidebar.selectbox("Selecciona una conversión", cat
 # Pedir entrada al usuario
 entrada_usuario = st.number_input("Ingrese el valor a convertir")
 
-# Realizar la conversión
+# Inicializar resultado
 resultado = None
-if categoria_seleccionada == "Temperatura":
-    if conversion_seleccionada == "Celsius a Fahrenheit":
-        resultado = entrada_usuario * 9/5 + 32
-    elif conversion_seleccionada == "Fahrenheit a Celsius":
-        resultado = (entrada_usuario - 32) * 5/9
-    elif conversion_seleccionada == "Celsius a Kelvin":
-        resultado = entrada_usuario + 273.15
-    elif conversion_seleccionada == "Kelvin a Celsius":
-        resultado = entrada_usuario - 273.15
-    # Agregar más conversiones para otras categorías aquí
+
+# Función para realizar la conversión
+def calcular_conversion(entrada, conversion):
+    if categoria_seleccionada == "Temperatura":
+        if conversion == "Celsius a Fahrenheit":
+            return entrada * 9/5 + 32
+        elif conversion == "Fahrenheit a Celsius":
+            return (entrada - 32) * 5/9
+        elif conversion == "Celsius a Kelvin":
+            return entrada + 273.15
+        elif conversion == "Kelvin a Celsius":
+            return entrada - 273.15
+        # Agregar más conversiones para otras categorías aquí
+    # Agregar más categorías y conversiones aquí
+
+# Calcular conversión si se presiona el botón "Calcular"
+if st.button("Calcular"):
+    resultado = calcular_conversion(entrada_usuario, conversion_seleccionada)
 
 # Mostrar resultado de la conversión si se calculó
 if resultado is not None:
     st.write(f"Has seleccionado la conversión: {conversion_seleccionada}")
     st.write(f"Valor a convertir: {entrada_usuario}")
     st.write(f"Resultado de la conversión: {resultado}")
+
+# Limpiar resultado si se presiona el botón "Limpiar"
+if st.button("Limpiar"):
+    resultado = None
