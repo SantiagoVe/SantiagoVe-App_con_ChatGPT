@@ -26,5 +26,9 @@ categoria_seleccionada = st.sidebar.selectbox("Selecciona una categoría", list(
 # Seleccionar tipo de conversión dentro de la categoría seleccionada
 conversion_seleccionada = st.sidebar.selectbox("Selecciona una conversión", categorias[categoria_seleccionada])
 
+# Pedir entrada al usuario
+entrada_usuario = st.number_input("Ingrese el valor a convertir")
+
 # Mostrar resultado de la conversión
 st.write(f"Has seleccionado la conversión: {conversion_seleccionada}")
+st.write(f"Valor a convertir: {entrada_usuario}")
