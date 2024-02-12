@@ -29,6 +29,21 @@ conversion_seleccionada = st.sidebar.selectbox("Selecciona una conversión", cat
 # Pedir entrada al usuario
 entrada_usuario = st.number_input("Ingrese el valor a convertir")
 
-# Mostrar resultado de la conversión
-st.write(f"Has seleccionado la conversión: {conversion_seleccionada}")
-st.write(f"Valor a convertir: {entrada_usuario}")
+# Realizar la conversión
+resultado = None
+if categoria_seleccionada == "Temperatura":
+    if conversion_seleccionada == "Celsius a Fahrenheit":
+        resultado = entrada_usuario * 9/5 + 32
+    elif conversion_seleccionada == "Fahrenheit a Celsius":
+        resultado = (entrada_usuario - 32) * 5/9
+    elif conversion_seleccionada == "Celsius a Kelvin":
+        resultado = entrada_usuario + 273.15
+    elif conversion_seleccionada == "Kelvin a Celsius":
+        resultado = entrada_usuario - 273.15
+    # Agregar más conversiones para otras categorías aquí
+
+# Mostrar resultado de la conversión si se calculó
+if resultado is not None:
+    st.write(f"Has seleccionado la conversión: {conversion_seleccionada}")
+    st.write(f"Valor a convertir: {entrada_usuario}")
+    st.write(f"Resultado de la conversión: {resultado}")
