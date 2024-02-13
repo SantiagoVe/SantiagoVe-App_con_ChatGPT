@@ -11,4 +11,7 @@ nombre_usuario = st.text_input("Por favor, ingresa tu nombre")
 
 # Imprimir mensaje de bienvenida si se proporciona un nombre
 if nombre_usuario:
-    st.write(f"{nombre_usuario}, te doy la bienvenida a mi primera app.")
+    if nombre_usuario == "Angie":
+        st.write("¡¿Ah?! Eres Angie? Te amo mucho mi linda.")
+    else:
+        st.write(f"{nombre_usuario}, te doy la bienvenida a mi primera app.")
