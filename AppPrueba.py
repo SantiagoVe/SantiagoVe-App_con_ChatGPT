@@ -6,4 +6,4 @@ buttonL = st.button("Log in")
 if button:
   correo = st.text_input('Ingresa tu correo')
   password = st.text_input('Ingresa Tu clave')
-  st.write('Tu cuenta es: 'correo, password)
+  st.write('Tu cuenta es: ', correo, password)
