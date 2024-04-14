@@ -5,4 +5,4 @@ st.write("Mi nueva APP")
 buttonL = st.button("Log in")
 if buttonL:
   correo = st.text_input('Ingresa tu correo')
-  st.write('Tu correo es ', correo)
+  st.write(correo)
