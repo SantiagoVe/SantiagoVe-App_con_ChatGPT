@@ -8,6 +8,6 @@ if buttonI:
   st.write('Estas son las casas')
 if buttonL:
   correo = st.text_input("Ingresa por favor tu correo 👇")
-  if correo:
+if correo:
     st.write("Tu correo es ", correo)
   
