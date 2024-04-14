@@ -4,5 +4,4 @@ st.title("Busca tu casa")
 st.write("Mi nueva APP")
 buttonL = st.button("Log in")
 if buttonL:
-  correo = st.text_input('Ingresa tu correo')
-  st.write(correo)
+  st.write('Vivan los paracos')
