@@ -9,7 +9,6 @@ if buttonI:
 if buttonL:
   correo = st.text_input("Ingresa tu correo 👇", type="email")
   password = st.text_input("Ingresa tu contraseña 👇", type="password")
-    
-    if st.button("Ingresar") or (st.session_state.enter_key_pressed and correo and password):
+  if st.button("Ingresar") or (st.session_state.enter_key_pressed and correo and password):
         st.write("Tu correo es ", correo)
         st.write("Tu contraseña es ", password)
