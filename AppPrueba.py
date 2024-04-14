@@ -9,5 +9,5 @@ if buttonI:
 if buttonL:
   correo = st.text_input("Ingresa por favor tu correo 👇")
   if correo:
-    st.write("Tu correo es", correo)
+    st.write("Tu correo es ", correo)
   
